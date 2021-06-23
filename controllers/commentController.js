@@ -13,7 +13,7 @@ class CommentController {
           UserId: data.id,
           comment
         })
-          .then((data) => {
+          .then((_) => {
             res.status(201).json({ msg: "OK" })
           })
       })
@@ -22,7 +22,7 @@ class CommentController {
       })
   }
 
-  static showAll(req, res) {
+  static showAll(_, res) {
     Comment.findAll({
       include: User,
       order: [["id", "DESC"]]
